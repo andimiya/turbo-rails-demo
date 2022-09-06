@@ -5,12 +5,12 @@ class QuotesTest < ApplicationSystemTestCase
     @quote = quotes(:first) # Reference to the first fixture quote
   end
 
-  test "creating a new quote" do
+  test "Creating a new quote" do
     # When we visit the Quotes#index page
     # we expect to see a title with the text "Quotes"
     visit quotes_path
     assert_selector "h1", text: "Quotes"
-    
+
     # When we click on the link with the text "New quote"
     # we expect to land on a page with the title "New quote"
     click_on "New quote"
@@ -27,13 +27,13 @@ class QuotesTest < ApplicationSystemTestCase
     assert_text "Capybara quote"
   end
 
-  test "showing a quote" do
+  test "Showing a quote" do
     visit quotes_path
     click_link @quote.name
 
     assert_selector "h1", text: @quote.name
   end
-  
+
   test "Updating a quote" do
     visit quotes_path
     assert_selector "h1", text: "Quotes"
